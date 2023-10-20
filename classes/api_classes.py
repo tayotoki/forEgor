@@ -1,3 +1,5 @@
+from typing import TypedDict
+
 from classes.abc_classes import Base
 from classes.vacancy import Vacancy
 import os
@@ -5,6 +7,8 @@ import requests
 
 
 class HH(Base, Vacancy):
+    API_URL = 'https://api.hh.ru/'
+
     def __init__(self, keyword, page=0):
         super().__init__(keyword, page)
         self.url: str = 'https://api.hh.ru/vacancies'
